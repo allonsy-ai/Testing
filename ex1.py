@@ -71,10 +71,10 @@ if st.button("Summarize"):
 
 	if summary_options == 'sumy':
 				summary_result = sumy_summarizer(message)
-			elif summary_options == 'gensim':
+	elif summary_options == 'gensim':
 				st.text("Using Gensim Summarizer ..")
 				summary_result = summarize(rawtext)
-			else:
+	else:
 				st.warning("Using Default Summarizer")
 				st.text("Using Gensim Summarizer ..")
 				summary_result = summarize(rawtext)
