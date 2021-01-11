@@ -52,7 +52,7 @@ def main():
 	""" NLP Based App with Streamlit """
 
 	# Title
-	st.title("WizKid")
+	st.title("WizKid App")
 	st.subheader("This App Helps with Assignments and Report Writing")
 	st.markdown("""
     	#### Description
