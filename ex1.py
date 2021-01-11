@@ -1,7 +1,7 @@
 import streamlit as st 
 import sumy 
 import nltk
-python -c import nltk; nltk.download('punkt')
+import nltk; nltk.download('punkt')
 
 # Sumy Summary Pkg
 from sumy.parsers.plaintext import PlaintextParser
