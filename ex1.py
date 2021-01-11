@@ -64,7 +64,7 @@ def main():
 	
 
 	# Summarization
-	if st.subheader("Summarize Your Text")
+st.subheader("Summarize Your Text")
 
 		message = st.text_area("Enter Text")
 		if st.button("Summarize"):
