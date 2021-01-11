@@ -80,7 +80,7 @@ if st.button("Summarize"):
 				summary_result = summarize(rawtext)
 
 		
-			st.success(summary_result)
+	st.success(summary_result)
 
 
 
