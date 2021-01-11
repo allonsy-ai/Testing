@@ -64,11 +64,9 @@ def main():
 	
 
 	# Summarization
-	if st.checkbox("Show Text Summarization"):
-		st.subheader("Summarize Your Text")
+	if st.subheader("Summarize Your Text")
 
 		message = st.text_area("Enter Text")
-		summary_options = st.selectbox("Choose Summarizer",['sumy'])
 		if st.button("Summarize"):
 			if summary_options == 'sumy':
 				summary_result = sumy_summarizer(message)
