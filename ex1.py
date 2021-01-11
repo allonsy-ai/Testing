@@ -71,7 +71,6 @@ def main():
 		summary_options = st.selectbox("Choose Summarizer",['sumy'])
 		if st.button("Summarize"):
 			if summary_options == 'sumy':
-				st.text("Summarizing...")
 				summary_result = sumy_summarizer(message)
 			elif summary_options == 'gensim':
 				st.text("Using Gensim Summarizer ..")
