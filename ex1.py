@@ -1,6 +1,5 @@
 import streamlit as st 
-import os
-python -c import nltk; nltk.download('punkt')
+import sumy 
 
 
 
