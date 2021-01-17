@@ -9,16 +9,6 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
 
-
-# Fetch Text From Url
-@st.cache
-def get_text(raw_url):
-	page = urlopen(raw_url)
-	soup = BeautifulSoup(page)
-	fetched_text = ' '.join(map(lambda p:p.text,soup.find_all('p')))
-	return fetched_text
-
-
 # Function for Sumy Summarization
 def sumy_summarizer(docx):
 	parser = PlaintextParser.from_string(docx,Tokenizer("english"))
@@ -28,45 +18,25 @@ def sumy_summarizer(docx):
 	result = ' '.join(summary_list)
 	return result
 
-# Function to Analyse Tokens and Lemma
-@st.cache
-def text_analyzer(my_text):
-	nlp = spacy.load('en_core_web_sm')
-	docx = nlp(my_text)
-	# tokens = [ token.text for token in docx]
-	allData = [('"Token":{},\n"Lemma":{}'.format(token.text,token.lemma_))for token in docx ]
-	return allData
-
-# Function For Extracting Entities
-@st.cache
-def entity_analyzer(my_text):
-	nlp = spacy.load('en_core_web_sm')
-	docx = nlp(my_text)
-	tokens = [ token.text for token in docx]
-	entities = [(entity.text,entity.label_)for entity in docx.ents]
-	allData = ['"Token":{},\n"Entities":{}'.format(tokens,entities)]
-	return allData
-
-
 def main():
 	""" NLP Based App with Streamlit """
 
 	# Title
-	st.title("WizKid App")
+	st.title("The WizKid App")
 	st.subheader("This App Helps with Assignments and Report Writing")
 	st.markdown("""
-    	#### Description
-    	+ This is a Natural Language Processing(NLP) Based App useful for Text Summarization
+    	#### How to use 
+         1. Highlight the text you want to summarize and copy
+        (Be sure to select a lengthy Text of a single Prefered Topic)
+
+         2. Paste into the space provided 
+
+         3. Click Summarize
     	""")
-
-
-
-	
-
 	# Summarization
 	if st.subheader("Summarize Your Text"):
 		message = st.text_area("Enter Text")
-		if st.button("Summarize"):
+	if st.button("Summarize"):
 			summary_result = sumy_summarizer(message)
 			st.success(summary_result)
 
