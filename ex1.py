@@ -42,7 +42,7 @@ def main():
 
 
 	st.sidebar.subheader("About App")
-	st.sidebar.text("Built by Olutayo")
+	st.sidebar.text("Built by Olutayo Solana")
 	st.sidebar.info("This is a prototype/proof of concept for the commercial viabilty of a product in this one's likeness")
 	
 
